@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="deliveryorderDao" class="org.logistics.dao.impl.DeliveryorderDaoImpl">
+		<constructor-arg ref="sessionFactory" />
+		<property name="topClassDao" ref="topClassDao" />
+	</bean>
+	<bean id="foo" class="com.text.Foo">
+		<constructor-arg ref="con" />
+		<property name="setterDI" ref="setter" />
+	</bean>
+	<bean id="con" class="com.text.ConstructorDI">
+		<constructor-arg ref="two" />
+	</bean>
+	<bean id="setter" class="com.text.SetterDI">
+		<constructor-arg ref="one" />
+	</bean>
+	
+	<bean id="one" class="com.text.One">
+	</bean>
+	<bean id="two" class="com.text.Two">
+	</bean>
+</beans>
